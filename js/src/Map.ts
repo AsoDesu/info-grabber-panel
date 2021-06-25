@@ -26,6 +26,7 @@ code.addEventListener("input", (e) => {
 });
 
 save_btn.addEventListener("click", (e) => {
+	if (!info.song) info.song = { bsr: "", diff: "" };
 	info.song.bsr = code.value;
 	info.song.diff = !diff_btn.innerText.includes("Difficulty") ? diff_btn.innerText : "";
 	SendInfo();
