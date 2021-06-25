@@ -2,7 +2,6 @@
 var ip_inp = document.getElementById("ta-ip");
 var pass_inp = document.getElementById("ta-pass");
 var save_btn = document.getElementById("save");
-var dis_btn = document.getElementById("disconnect");
 ws.addEventListener("message", async (msg) => {
     var data = (await JSON.parse(msg.data));
     info = data;
@@ -30,16 +29,4 @@ save_btn.addEventListener("click", () => {
     };
     SendInfo();
     save_btn.classList.add("hidden");
-});
-dis_btn.addEventListener("click", () => {
-    info.taip = {
-        ip: "1",
-        password: "1",
-    };
-    SendInfo();
-    save_btn.classList.add("hidden");
-    info.taip = {
-        ip: ip_inp.value,
-        password: pass_inp.value,
-    };
 });
